@@ -1,0 +1,15 @@
+# Git
+.git
+.gitignore
+
+# Python cache y entornos virtuales
+__pycache__
+venv/
+.env
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Documentación (no es necesaria para que la app funcione)
+README.md

@@ -20,3 +20,8 @@ Para ejecutar esta aplicación en local, sigue estos pasos:
 
 # Momento actual
 el programa ya da una sola respuesta de vaticionio por llamada
+
+
+# Para correr el docker
+1. Construir la imagen: usar el comando `docker build -t bayeta-app` .
+2. Correr el contenedor `docker run -p 5000:5000 bayeta-app`
