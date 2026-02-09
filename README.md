@@ -17,3 +17,6 @@ Para ejecutar esta aplicación en local, sigue estos pasos:
 2. **Activar el entorno:** `source venv/bin/activate`
 3. **Instalar dependencias:** `pip install -r requirements.txt`
 4. **Ejecutar:** `python app.py`
+
+# Momento actual
+el programa ya da una sola respuesta de vaticionio por llamada
