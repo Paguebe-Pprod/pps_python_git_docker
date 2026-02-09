@@ -6,23 +6,21 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    # Generamos un número aleatorio entre 1 y 10
-    repeticiones = random.randint(1, 10)
+    # Llamamos a la función para obtener 1 sola frase
+    resultado = frotar(1)
     
-    # Creamos el texto base
-    frase = "¡Hola, mundo! Bienvenido a La Bayeta de la Fortuna.<br>"
+    # Extraemos el texto de la lista (o mensaje de error)
+    frase_del_dia = resultado[0] if resultado else "La bayeta está seca hoy..."
     
-    # Lo repetimos en bucle
-    contenido = ""
-    for i in range(repeticiones):
-        contenido += f"{i+1}. {frase}"
-    
-    return f"<html><body><h1>Sesión de hoy ({repeticiones} veces):</h1>{contenido}</body></html>"
+    # Retornamos el HTML básico con la frase única
+    return f"<html><body><h1>Tu fortuna de hoy:</h1><p>{frase_del_dia}</p></body></html>"
 
 @app.route('/frotar/<int:n_frases>')
 def get_frases(n_frases):
+    # Endpoint para devolver JSON si se piden varias frases
     lista_frases = frotar(n_frases)
     return jsonify({"frases": lista_frases, "cantidad": n_frases})
 
 if __name__ == '__main__':
+    # El host 0.0.0.0 es clave para que funcione luego en Docker
     app.run(host='0.0.0.0', port=5000)
