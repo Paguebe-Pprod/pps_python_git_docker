@@ -13,3 +13,7 @@ Dockerfile
 
 # Documentación (no es necesaria para que la app funcione)
 README.md
+
+# para que ignore también:
+compose.yml
+docker-compose.yml

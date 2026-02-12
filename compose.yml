@@ -1,0 +1,24 @@
+services:
+  db:
+    image: mongo:latest
+    container_name: mongo-db
+    ports:
+      - "27017:27017"
+    networks:
+      - bayeta-red
+
+  app:
+    build: .
+    container_name: bayeta-web
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_HOST=db
+    depends_on:
+      - db
+    networks:
+      - bayeta-red
+
+networks:
+  bayeta-red:
+    driver: bridge
