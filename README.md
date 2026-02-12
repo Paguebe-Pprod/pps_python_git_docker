@@ -25,3 +25,17 @@ el programa ya da una sola respuesta de vaticionio por llamada
 # Para correr el docker
 1. Construir la imagen: usar el comando `docker build -t bayeta-app` .
 2. Correr el contenedor `docker run -p 5000:5000 bayeta-app`
+
+# Olvida lo anterior, ahora para correr el docker con mongo-db
+docker network create bayeta-red
+docker stop mongo-db && docker rm mongo-db
+docker run -d --name mongo-db --network bayeta-red mongo
+docker build -t bayeta-app:v2 .
+docker run -d -p 5000:5000 --name bayeta-web \
+  --network bayeta-red \
+  -e MONGO_HOST=mongo-db \
+  bayeta-app:v2
+
+## Requisitos: 
+MongoDB en el puerto 27017 . Aunque esto en principio lo hace la función inicialiar del script `persistencia.py`
+
