@@ -45,3 +45,6 @@ MongoDB en el puerto 27017 . Aunque esto en principio lo hace la función inicia
 2. comando `docker-compose up -d`
 3. para ver si todo está bien `docker-compose ps`
 4. para parar el compose `docker-compose down`
+
+Si no funciona, prueba `docker-compose up -d --build`
+
