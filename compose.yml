@@ -4,6 +4,8 @@ services:
     container_name: mongo-db
     ports:
       - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
     networks:
       - bayeta-red
 
@@ -22,3 +24,6 @@ services:
 networks:
   bayeta-red:
     driver: bridge
+
+volumes:
+  mongo-data:

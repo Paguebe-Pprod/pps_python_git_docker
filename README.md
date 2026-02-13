@@ -42,4 +42,6 @@ MongoDB en el puerto 27017 . Aunque esto en principio lo hace la función inicia
 
 ## Olvida lo anterior de lo anterior, ahora con compose es 
 1. estar en el directorio donde se encuentre el fichero
-2. comando `docker compose up -d`
+2. comando `docker-compose up -d`
+3. para ver si todo está bien `docker-compose ps`
+4. para parar el compose `docker-compose down`
