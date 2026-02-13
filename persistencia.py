@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 import os
 
-# Si estamos en Docker, usaremos el nombre del contenedor 'mongo-db', 
+# Si estamos en Docker, usamos el nombre del contenedor 'mongo-db', 
 # si no, usaremos 'localhost'
 MONGO_HOST = os.environ.get('MONGO_HOST', 'localhost')
 
@@ -29,3 +29,10 @@ def consultar(n_frases=1):
     resultado = [f['frase'] for f in frases_cursor]
     cliente.close()
     return resultado
+
+def annadir_frases(lista_frases):
+    cliente, coleccion = instanciar()
+    documentos = [{"frase": f} for f in lista_frases]
+    resultado = coleccion.insert_many(documentos)
+    cliente.close()
+    return len(resultado.inserted_ids)

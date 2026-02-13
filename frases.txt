@@ -4,4 +4,4 @@ El Docker de hoy es el servidor de mañana.
 Cuidado con los merges en viernes por la tarde.
 La fortuna sonríe a quien hace git push a diario.
 Hoy tendrás que reestablecer una contraseña.
-Los certificados siempre suman en tu roadmap laboral.
+Las certificaciones siempre suman en tu roadmap laboral.
